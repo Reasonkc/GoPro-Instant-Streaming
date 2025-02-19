@@ -1,64 +1,35 @@
 # GoProStream
 
-Tools for handling/displaying GoPro HTTP/UDP stream. Available in Python.
+**GoProStream** is a Python-based tool for handling and displaying GoPro camera streams over HTTP/UDP. It provides various streaming and recording options—including low-latency local streaming for OBS—making it simpler to manage and broadcast GoPro footage in real time.
 
-### Dependencies:
+---
 
-Python:
+## Dependencies
 
-* FFMPEG
-* urllib
+- **FFmpeg**: Must be installed and accessible via the command line.  
+- **urllib**: Included by default in most Python installations (Python 3).  
 
-## Screenshots:
+---
 
-![](http://i.imgur.com/5wlh8yS.png) 
+## Configuration Flags
 
+- **VERBOSE = False**  
+  Toggles verbose output for FFmpeg.
 
-## Compatible with:
+- **RECORD = False**  
+  Sends a record command to the camera; the camera must be in video mode.
 
-- HERO3 
-- HERO3+
-- HERO4
-- HERO Session
-- HERO+ (incl. LCD)
-- HERO5 (needs testing)
+- **STREAM = False**  
+  Creates a local low-latency stream (e.g., for OBS) via FFmpeg; the camera must be in video mode.
 
-## Flags:
+- **SAVE = False**  
+  Enables saving the GoPro live feed to your local machine.
 
-    VERBOSE=False
+- **SAVE_FILENAME = "goprofeed2"**  
+  Specifies the default filename for saved recordings.
 
-Verbose flag for FFmpeg
+- **SAVE_FORMAT = "mp4"**  
+  Defines the output file format for recorded videos.
 
-    RECORD=False
-
-Sends a record command to the camera, camera must be in video mode!
-
-    STREAM=False
-
-Creates a local stream via FFMPEG with minimized lag for use in OBS, camera must be in video mode!
-
-    SAVE=False
-
-Save the gopro live feed to your machine
-
-    SAVE_FILENAME="goprofeed2"
-
-The filename of the saved video feed
-
-    SAVE_FORMAT="mp4"
-
-File format for saved video feed
-
-    SAVE_LOCATION="/home/konrad/Videos/"
-
-Location for saved video feed (needs to be changed to your username and directory)
-
-### Further instructions:
-
-
-https://medium.com/@konrad_it/how-to-stream-from-a-gopro-camera-f4a164150797
-
-
-### Credit
-
-@SonOf8Bits
+- **SAVE_LOCATION = "/home/konrad/Videos/"**  
+  Sets the directory in which to save the recorded files (modify this path as needed).
